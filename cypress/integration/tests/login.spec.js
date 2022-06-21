@@ -9,9 +9,9 @@ it('Login to erply', () => {
     cy.request("POST", "https://login.erply.com/", requestBody).should(
       (response) => {
         expect(response.status).to.eq(200);
+        expect(response).to.have.property('headers')
+  expect(response).to.have.property('duration')
       }
     );
-
-    
-  })
   
+  })
